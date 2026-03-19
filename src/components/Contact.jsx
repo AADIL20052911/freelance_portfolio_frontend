@@ -25,14 +25,14 @@ export default function Contact() {
   };
 
   return (
-    <section id="contact" className="py-32 relative z-10 w-full overflow-hidden">
-      <div className="mx-auto max-w-[1400px]">
+    <section id="contact" className="py-20 sm:py-32 relative z-10 w-full overflow-hidden">
+      <div className="mx-auto max-w-[1400px] px-4 sm:px-10 lg:px-16">
         <motion.div
           initial={{ opacity: 0, scale: 0.95, y: 40 }}
           whileInView={{ opacity: 1, scale: 1, y: 0 }}
           viewport={{ once: true, amount: 0.1 }}
           transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-          className="relative overflow-hidden rounded-[3rem] lg:rounded-[4rem] border border-slate-200 bg-white p-8 sm:p-16 lg:p-24 shadow-[0_20px_80px_rgba(0,0,0,0.05)]"
+          className="relative overflow-hidden rounded-[2rem] sm:rounded-[3rem] lg:rounded-[4rem] border border-slate-200 bg-white p-6 sm:p-16 lg:p-24 shadow-[0_20px_80px_rgba(0,0,0,0.05)]"
         >
           {/* Background glow for contact section */}
           <div className="absolute inset-0 -z-10 bg-gradient-to-br from-brand-50/50 via-transparent to-accent-50/50 pointer-events-none" />
@@ -42,9 +42,9 @@ export default function Contact() {
           <div className="grid lg:grid-cols-2 gap-20 lg:gap-32 relative z-10">
             {/* Left Col: Text & Info */}
             <div className="flex flex-col justify-center">
-              <span className="text-sm font-bold tracking-widest uppercase text-brand-600 mb-8 block drop-shadow-sm">Ready to start?</span>
-              <h2 className="font-heading text-5xl md:text-6xl lg:text-[4.5rem] font-black tracking-tight text-slate-900 mb-10 leading-[1.05]">
-                Let's Build Something <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-600 to-accent-600 drop-shadow-sm">Powerful.</span>
+              <span className="text-sm font-bold tracking-widest uppercase text-brand-600 mb-6 sm:mb-8 block drop-shadow-sm">Ready to start?</span>
+              <h2 className="font-heading text-4xl sm:text-5xl md:text-6xl lg:text-[4.5rem] font-black tracking-tight text-slate-900 mb-6 sm:mb-10 leading-[1.1] sm:leading-[1.05]">
+                Let's Build Something <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-600 to-accent-600 drop-shadow-sm block sm:inline">Powerful.</span>
               </h2>
               <p className="text-xl text-slate-600 font-medium leading-relaxed mb-16 max-w-lg">
                 I am currently open for new freelance opportunities. Whether you have a specific project in mind or just want to explore possibilities, let's talk.
@@ -53,13 +53,13 @@ export default function Contact() {
               <div className="space-y-10 mt-auto">
                 <div className="flex flex-col gap-3 group">
                   <p className="text-sm font-bold uppercase tracking-widest text-slate-400 group-hover:text-brand-600 transition-colors">Email Me At</p>
-                  <a href="mailto:nireshtoranto@gmail.com" className="font-heading text-3xl font-bold text-slate-900 hover:text-transparent hover:bg-clip-text hover:bg-gradient-to-r hover:from-brand-600 hover:to-accent-600 transition-all duration-300 w-max">
+                  <a href="mailto:nireshtoranto@gmail.com" className="font-heading text-xl sm:text-2xl md:text-3xl font-bold text-slate-900 hover:text-transparent hover:bg-clip-text hover:bg-gradient-to-r hover:from-brand-600 hover:to-accent-600 transition-all duration-300 break-all w-full sm:w-max tracking-tight">
                     nireshtoranto@gmail.com
                   </a>
                 </div>
                 <div className="flex flex-col gap-3 group">
                   <p className="text-sm font-bold uppercase tracking-widest text-slate-400 group-hover:text-brand-600 transition-colors">Call Me At</p>
-                  <a href="tel:+919345034653" className="font-heading text-3xl font-bold text-slate-900 hover:text-transparent hover:bg-clip-text hover:bg-gradient-to-r hover:from-brand-600 hover:to-accent-600 transition-all duration-300 w-max">
+                  <a href="tel:+919345034653" className="font-heading text-xl sm:text-2xl md:text-3xl font-bold text-slate-900 hover:text-transparent hover:bg-clip-text hover:bg-gradient-to-r hover:from-brand-600 hover:to-accent-600 transition-all duration-300 w-max">
                     +91 9345034653
                   </a>
                 </div>
@@ -69,36 +69,36 @@ export default function Contact() {
             {/* Right Col: Form */}
             <form onSubmit={handleSubmit} className="flex flex-col gap-8 w-full">
               <div className="space-y-3">
-                <label className="text-sm font-bold tracking-wide text-slate-600 ml-4 uppercase">Your Name</label>
+                <label className="text-xs sm:text-sm font-bold tracking-wide text-slate-600 ml-4 uppercase">Your Name</label>
                 <input
                   type="text"
                   value={form.name}
                   onChange={updateField('name')}
                   required
                   placeholder="John Doe"
-                  className="w-full rounded-3xl border-2 border-slate-100 bg-slate-50 px-8 py-6 text-lg text-slate-900 outline-none transition-all duration-300 placeholder:text-slate-400 focus:border-brand-500 focus:bg-white focus:shadow-[0_0_40px_rgba(99,102,241,0.1)]"
+                  className="w-full rounded-[1.5rem] sm:rounded-3xl border-2 border-slate-100 bg-slate-50 px-6 py-5 sm:px-8 sm:py-6 text-base sm:text-lg text-slate-900 outline-none transition-all duration-300 placeholder:text-slate-400 focus:border-brand-500 focus:bg-white focus:shadow-[0_0_40px_rgba(99,102,241,0.1)]"
                 />
               </div>
               <div className="space-y-3">
-                <label className="text-sm font-bold tracking-wide text-slate-600 ml-4 uppercase">Email Address</label>
+                <label className="text-xs sm:text-sm font-bold tracking-wide text-slate-600 ml-4 uppercase">Email Address</label>
                 <input
                   type="email"
                   value={form.email}
                   onChange={updateField('email')}
                   required
                   placeholder="john@example.com"
-                  className="w-full rounded-3xl border-2 border-slate-100 bg-slate-50 px-8 py-6 text-lg text-slate-900 outline-none transition-all duration-300 placeholder:text-slate-400 focus:border-brand-500 focus:bg-white focus:shadow-[0_0_40px_rgba(99,102,241,0.1)]"
+                  className="w-full rounded-[1.5rem] sm:rounded-3xl border-2 border-slate-100 bg-slate-50 px-6 py-5 sm:px-8 sm:py-6 text-base sm:text-lg text-slate-900 outline-none transition-all duration-300 placeholder:text-slate-400 focus:border-brand-500 focus:bg-white focus:shadow-[0_0_40px_rgba(99,102,241,0.1)]"
                 />
               </div>
               <div className="space-y-3">
-                <label className="text-sm font-bold tracking-wide text-slate-600 ml-4 uppercase">Project Details</label>
+                <label className="text-xs sm:text-sm font-bold tracking-wide text-slate-600 ml-4 uppercase">Project Details</label>
                 <textarea
                   value={form.message}
                   onChange={updateField('message')}
                   required
                   placeholder="Tell me about your goals, timeline, and budget..."
                   rows={5}
-                  className="w-full resize-none rounded-3xl border-2 border-slate-100 bg-slate-50 px-8 py-6 text-lg text-slate-900 outline-none transition-all duration-300 placeholder:text-slate-400 focus:border-brand-500 focus:bg-white focus:shadow-[0_0_40px_rgba(99,102,241,0.1)]"
+                  className="w-full resize-none rounded-[1.5rem] sm:rounded-3xl border-2 border-slate-100 bg-slate-50 px-6 py-5 sm:px-8 sm:py-6 text-base sm:text-lg text-slate-900 outline-none transition-all duration-300 placeholder:text-slate-400 focus:border-brand-500 focus:bg-white focus:shadow-[0_0_40px_rgba(99,102,241,0.1)]"
                 />
               </div>
 
@@ -118,7 +118,7 @@ export default function Contact() {
                 whileTap={{ scale: 0.98 }}
                 type="submit"
                 disabled={status.loading}
-                className="mt-6 flex h-20 w-full items-center justify-center rounded-3xl bg-gradient-to-r from-brand-600 to-accent-600 px-8 text-xl font-black text-white shadow-[0_10px_40px_-10px_rgba(168,85,247,0.4)] transition-all duration-500 hover:shadow-[0_20px_60px_-15px_rgba(168,85,247,0.6)] hover:brightness-105 disabled:cursor-not-allowed disabled:opacity-50"
+                className="mt-6 flex h-16 sm:h-20 w-full items-center justify-center rounded-[1.5rem] sm:rounded-3xl bg-gradient-to-r from-brand-600 to-accent-600 px-6 sm:px-8 text-lg sm:text-xl font-black text-white shadow-[0_10px_40px_-10px_rgba(168,85,247,0.4)] transition-all duration-500 hover:shadow-[0_20px_60px_-15px_rgba(168,85,247,0.6)] hover:brightness-105 disabled:cursor-not-allowed disabled:opacity-50"
               >
                 {status.loading ? 'Sending...' : 'Send Message'}
               </motion.button>
